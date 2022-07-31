@@ -1,24 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Menu from "./components/Menu";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import LoginPage from "./components/LoginPage";
+import RegisterPage from "./components/RegisterPage";
+import MainPage from "./components/MainPage";
+import ProtectedRoute from "./shared/ProtectedRoute";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Menu />
+      <Routes>
+        <Route
+          path="/register"
+          element={
+            <ProtectedRoute requiresLogin={true} component={<RegisterPage />}
+            />
+          }
+        />
+
+        <Route
+          path="/login"
+          element={
+            <ProtectedRoute requiresLogin={true} component={<LoginPage />}
+            />
+          }
+        />
+
+        <Route
+          path="/main"
+          element={
+            <ProtectedRoute requiresLogin={true} component={<MainPage />}
+            />
+          }
+        />
+
+        <Route
+          path="/user"
+          element={
+            <ProtectedRoute requiresLogin={true} component={<UserPage />}
+            />
+          }
+        />
+
+        {/* <Route
+          path="/"
+          element={
+            <ProtectedRoute requiresLogin={true} component={< />}
+            />
+          } 
+          />
+
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute requiresLogin={true} component={< />}
+            />
+          } 
+          />
+          <Route path="*" element={<Navigate to="/login" />}
+        /> */}
+      </Routes>
+    </Router>
   );
 }
 
