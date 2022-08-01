@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { UserProvider } from "./context/UserContext";
+import { SearchProvider } from "./context/SearchContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <SearchProvider>
-    <MainProvider>
-      <UserProvider>
-        <App />
-      </UserProvider>
-    </MainProvider>
+    <UserProvider>
+      <App />
+    </UserProvider>
   </SearchProvider>
 
 );

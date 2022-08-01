@@ -9,6 +9,8 @@ import {
 import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
 import MainPage from "./components/MainPage";
+// import ProfilePage from "./components/ProfilePage";
+import { UserContext } from "./context/UserContext";
 import ProtectedRoute from "./shared/ProtectedRoute";
 
 function App() {
@@ -19,7 +21,7 @@ function App() {
         <Route
           path="/register"
           element={
-            <ProtectedRoute requiresLogin={true} component={<RegisterPage />}
+            <ProtectedRoute requiresLogin={false} component={<RegisterPage />}
             />
           }
         />
@@ -27,7 +29,7 @@ function App() {
         <Route
           path="/login"
           element={
-            <ProtectedRoute requiresLogin={true} component={<LoginPage />}
+            <ProtectedRoute requiresLogin={false} component={<LoginPage />}
             />
           }
         />
@@ -40,21 +42,13 @@ function App() {
           }
         />
 
-        <Route
-          path="/user"
+        {/* <Route
+          path="/profile"
           element={
-            <ProtectedRoute requiresLogin={true} component={<UserPage />}
+            <ProtectedRoute requiresLogin={true} component={<ProfilePage />}
             />
           }
         />
-
-        {/* <Route
-          path="/"
-          element={
-            <ProtectedRoute requiresLogin={true} component={< />}
-            />
-          } 
-          />
 
         <Route
           path="/"

@@ -20,11 +20,11 @@ function LoginPage() {
   );
 
   return (
-    <div className="d-flex justify-content-center">
-      <form className="col-12 col-sm-10 col-md-8 col-lg-6">
-        <h1 className="text-center">Login</h1>
-        <div>
-          <label htmlFor="username" className="form-label">
+    <div>
+      <form>
+        <h1 className="container">Login</h1>
+        <div className="container">
+          <label htmlFor="username">
             Username
           </label>
           <input
@@ -32,10 +32,9 @@ function LoginPage() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             type="text"
-            className="form-control"
             id="username"
             aria-describedby="userHelp"
-            placeholder="user@example.com"
+            placeholder="username"
           />
           <div
             id="userHelp"
@@ -44,22 +43,21 @@ function LoginPage() {
             Username Must Be between 4 and 20 characters
           </div>
         </div>
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">
+        <div className="container">
+          <label htmlFor="password">
             Password
           </label>
-          <div className="input-group">
+          <div>
             <input
               name="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               type={showPassword ? "text" : "password"}
-              className="form-control"
               id="password"
               aria-describedby="userHelp"
+              placeholder="password"
             />
             <button
-              className="input-group-text"
               onClick={(e) => {
                 e.preventDefault();
                 setShowPassword((curr) => !curr);
@@ -75,22 +73,21 @@ function LoginPage() {
             Password Must Be between 5 and 20 characters
           </div>
         </div>
-
         <button
           disabled={passError || userError}
           onClick={(e) => {
             e.preventDefault();
             if (!passError && !userError) {
               login(username);
-              navigate("/search");
+              navigate("/main");
             }
           }}
           type="submit"
-          className="btn btn-dark d-block ms-auto"
+          className="container"
         >
           Submit
         </button>
-        <h6 className="text-center my-4">
+        <h6 className="container">
           <NavLink to="/register">Don't have an account? Register here</NavLink>
         </h6>
       </form>
