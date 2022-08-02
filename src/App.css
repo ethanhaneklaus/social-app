@@ -36,27 +36,43 @@
     justify-content: center;
     flex-direction: row;
     width: 100%;
-    height: 100%;
 }
 
 .leftcontainer {
-    width: 20%;
-    height: 80%;
-    background-color: black;
+    width: 50%;
+    background-color: darkgray;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    border: 5px solid green;
 }
 
 .middlecontainer {
-    width: 60%;
-    height: 80%;
-    background-color: darkgray;
+    width: 50%;
+    background-color: lightgray;
     justify-content: center;
     display: flex;
     align-items: center;
     flex-direction: column;
+    border: 5px solid red;
 }
+
+.rowcontainer {
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 50%;
+}
+
+.columncontainer {
+    flex-direction: column;
+}
+
+.tiktokdiv {
+    display: flex;
+}
+
+
 
 .test {
     background-color: gray;
@@ -65,7 +81,16 @@
     text-align: center;
 }
 
+.commentsbox {
+    background-color: whitesmoke;
+    align-items: center;
+}
 
+.comments {
+    text-decoration: underline;
+    text-underline-position: under;
+    cursor: pointer;
+}
 
 .bdge {
     height: 21px;
@@ -77,11 +102,7 @@
     line-height: 3px;
 }
 
-.comments {
-    text-decoration: underline;
-    text-underline-position: under;
-    cursor: pointer;
-}
+
 
 .dot {
     height: 7px;
@@ -101,7 +122,6 @@
 }
 
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
     text-align: center;
@@ -134,8 +154,4 @@ a {
 button:hover,
 a:hover {
     opacity: 0.7;
-}
-
-.tiktokdiv {
-    display: flex;
 }
