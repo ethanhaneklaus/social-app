@@ -16,7 +16,7 @@ function MainPage() {
 
             <div className="middlecontainer">
 
-                <div>
+                <div ClassName="tiktokdiv">
                     <iframe
                         src="https://www.tiktok.com/embed/7115393853708094254"
                         allowfullscreen
