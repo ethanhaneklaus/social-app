@@ -15,9 +15,17 @@ function MainPage() {
             </div>
 
             <div className="middlecontainer">
-                <div className="test">Content insert
 
+                <div>
+                    <iframe
+                        src="https://www.tiktok.com/embed/7115393853708094254"
+                        allowfullscreen
+                        scrolling="no"
+                        allow="encrypted-media;"
+                    ></iframe>
                 </div>
+
+
 
                 <div>
                     Comment Section

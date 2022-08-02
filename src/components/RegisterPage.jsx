@@ -33,7 +33,7 @@ function RegisterPage() {
             type="text"
             id="username"
             aria-describedby="userHelp"
-            placeholder="user@example.com"
+            placeholder="username"
           />
           <div
             id="userHelp"
@@ -52,6 +52,7 @@ function RegisterPage() {
             type="password"
             id="password"
             aria-describedby="userHelp"
+            placeholder="password"
           />
           <div
             id="passwordHelp"
@@ -70,6 +71,7 @@ function RegisterPage() {
             type="password"
             id="confirm"
             aria-describedby="userHelp"
+            placeholder="confirm password"
           />
           <div
             id="userHelp"

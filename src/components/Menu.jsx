@@ -7,10 +7,10 @@ function Menu() {
 
   return (
     <div className="topnav">
-      <a className="active" href="/main">MainPage</a>
-      <a href="/login">LoginPage</a>
-      <a href="/register">RegisterPage</a>
-      <a href="/profile">ProfilePage</a>
+      <NavLink to="/main">MainPage</NavLink>
+      <NavLink to="/login">LoginPage</NavLink>
+      <NavLink to="/register">RegisterPage</NavLink>
+      <NavLink to="/profile">ProfilePage</NavLink>
     </div>
   );
 }
