@@ -6,14 +6,14 @@ function MainPage() {
     const navigate = useNavigate();
 
     return (
-        <div className="maincontainer">
+        <div style={{ display: "flex", flexFlow: "row wrap", width: "100%" }}>
 
             <div className="leftcontainer">
 
                 <h8>Suggested for you</h8>
 
-                <div className="rowcontainer">
-                    <div className="columncontainer">
+                <div style={{ display: "flex", flexFlow: "row wrap" }}>
+                    <div style={{ display: "flex", flexFlow: "row wrap" }}>
                         <>
                             <iframe
                                 height="615"
@@ -25,7 +25,7 @@ function MainPage() {
                             ></iframe>
                         </>
                         <>
-                            <div className="card">
+                            <div className="card" style={{ display: "flex" }}>
                                 <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="John" style={{ width: "100%" }} />
                                 <h1>Users Name</h1>
                                 <h1>Users Handle</h1>
@@ -39,8 +39,8 @@ function MainPage() {
                             </div>
                         </>
                     </div>
-                    <div className="columncontainer">
-                        <div className="rowcontainer">
+                    <div>
+                        <div className="100%">
                             <input type="text" placeholder="Like to leave a comment?"></input>
                             <button type="submit">Submit</button>
                         </div>
@@ -50,8 +50,8 @@ function MainPage() {
                     </div>
                 </div>
 
-                <div>
-                    <div>
+                <div style={{ display: "flex", flexFlow: "row wrap" }}>
+                    <div style={{ display: "flex", flexFlow: "row wrap" }}>
                         <>
                             <iframe
                                 height="615"
@@ -63,7 +63,7 @@ function MainPage() {
                             ></iframe>
                         </>
                         <>
-                            <div className="card">
+                            <div className="card" style={{ display: "flex" }}>
                                 <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="John" style={{ width: "100%" }} />
                                 <h1>Users Name</h1>
                                 <h1>Users Handle</h1>
@@ -77,7 +77,7 @@ function MainPage() {
                             </div>
                         </>
                     </div>
-                    <div width="325">
+                    <div width="100%">
                         <input type="text" placeholder="Like to leave a comment?"></input>
                         <button type="submit">Submit</button>
                         <div>
@@ -91,8 +91,8 @@ function MainPage() {
 
                 <h8>You're Following</h8>
 
-                <div>
-                    <div>
+                <div style={{ display: "flex", flexFlow: "row wrap" }}>
+                    <div style={{ display: "flex", flexFlow: "row wrap" }}>
                         <>
                             <iframe
                                 height="615"
@@ -104,7 +104,7 @@ function MainPage() {
                             ></iframe>
                         </>
                         <>
-                            <div className="card">
+                            <div className="card" style={{ display: "flex" }}>
                                 <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="John" style={{ width: "100%" }} />
                                 <h1>Users Name</h1>
                                 <h1>Users Handle</h1>
@@ -118,7 +118,7 @@ function MainPage() {
                             </div>
                         </>
                     </div>
-                    <div width="325">
+                    <div width="100%">
                         <input type="text" placeholder="Like to leave a comment?"></input>
                         <button type="submit">Submit</button>
                         <div>
@@ -131,14 +131,14 @@ function MainPage() {
                         <iframe
                             height="615"
                             width="325"
-                            src="https://www.tiktok.com/embed/7124128907141418282"
+                            src="https://www.tiktok.com/embed/7119607222706998574"
                             allowfullscreen
                             scrolling="no"
                             allow="encrypted-media;"
                         ></iframe>
                     </>
                     <>
-                        <div className="card">
+                        <div className="card" style={{ display: "flex" }}>
                             <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80" alt="John" style={{ width: "100%" }} />
                             <h1>Users Name</h1>
                             <h1>Users Handle</h1>
@@ -151,7 +151,7 @@ function MainPage() {
                             <p><button className="button">Contact</button></p>
                         </div>
                     </>
-                    <div width="325">
+                    <div width="100%">
                         <input type="text" placeholder="Like to leave a comment?"></input>
                         <button type="submit">Submit</button>
                         <div>
