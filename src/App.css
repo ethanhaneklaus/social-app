@@ -41,7 +41,6 @@
 .leftcontainer {
     width: 50%;
     background-color: darkgray;
-    justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +49,6 @@
 .middlecontainer {
     width: 50%;
     background-color: lightgray;
-    justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
