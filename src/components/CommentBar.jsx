@@ -4,20 +4,20 @@ import React, { useState } from "react"
 function CommentBox() {
 
     const [posted, setPosted] = useState(null);
-
-    let Comment = document.getElementById("com").value;
-    document.getElementById("compop").innerHTML = x;
+    const [comment, setComment] = useState("");
 
     return (
 
         <div style={{ width: "655px", border: "solid black 1px" }}>
             <div style={{ width: "100%" }}>
                 <input
-                    value="comment"
+                    value=""
                     id="com"
                     size="72"
                     type="text"
-                    placeholder="Like to leave a comment?">
+                    placeholder="Like to leave a comment?"
+                    onChange={(e) => { setComment(e.target.value) }}
+                >
 
                 </input>
                 <button
@@ -28,7 +28,7 @@ function CommentBox() {
                 >Submit</button>
             </div>
             <div
-                value="posted"
+                value="setComment"
                 id="compop"
                 style={{ width: "320", height: "100px" }}
                 className="commentbox"
