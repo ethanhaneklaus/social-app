@@ -22,7 +22,7 @@
 
 /* Add a color to the active/current link */
 .topnav a.active {
-    background-color: #04AA6D;
+    background-color: #380a60;
     color: white;
 }
 
@@ -38,9 +38,14 @@
     width: 100%;
 }
 
+.profilecontainer {
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+}
+
 .leftcontainer {
     width: 50%;
-    background-color: darkgray;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,7 +53,6 @@
 
 .middlecontainer {
     width: 50%;
-    background-color: lightgray;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,17 +79,6 @@
     width: 50%;
     color: white;
     text-align: center;
-}
-
-.commentsbox {
-    background-color: whitesmoke;
-    align-items: center;
-}
-
-.comments {
-    text-decoration: underline;
-    text-underline-position: under;
-    cursor: pointer;
 }
 
 .bdge {
@@ -154,4 +147,25 @@ a:hover {
 
 .fullbg {
     background-image: image.png;
+}
+
+.scroll-container {
+    height: 720px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.header {
+    background-color: #380a60;
+    color: white;
+    width: 50%;
+    text-align: center;
+}
+
+.wholebg {
+    background-color: #380a60;
+}
+
+.commentbox {
+    background-color: white;
 }
