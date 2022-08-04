@@ -3,7 +3,7 @@ import React, { useState } from "react"
 
 function CommentBox() {
 
-    const [posted, setPosted] = useState(null);
+    const [posted, setPosted] = useState([]);
     const [comment, setComment] = useState("");
 
     return (
@@ -11,7 +11,7 @@ function CommentBox() {
         <div style={{ width: "655px", border: "solid black 1px" }}>
             <div style={{ width: "100%" }}>
                 <input
-                    value=""
+                    value={comment}
                     id="com"
                     size="72"
                     type="text"
@@ -27,12 +27,7 @@ function CommentBox() {
 
                 >Submit</button>
             </div>
-            <div
-                value="setComment"
-                id="compop"
-                style={{ width: "320", height: "100px" }}
-                className="commentbox"
-            ></div>
+            <div></div>
         </div>
     );
 }
