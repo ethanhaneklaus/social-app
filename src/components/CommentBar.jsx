@@ -6,6 +6,7 @@ function CommentBox() {
     const [posted, setPosted] = useState([]);
     const [comment, setComment] = useState("");
 
+
     return (
 
         <div style={{ width: "655px", border: "solid black 1px" }}>
@@ -24,10 +25,19 @@ function CommentBox() {
                     id="comsub"
                     type="submit"
                     disabled={comment.length < 1}
-
+                    onClick={(e) => {
+                        { setPosted({ comment }); }
+                    }}
                 >Submit</button>
             </div>
-            <div></div>
+            <div
+                value="setComment"
+                id="compop"
+                style={{ width: "320", height: "100px" }}
+                className="commentbox"
+            >
+                {posted.map((val, idx) => <div key={idx}>{val}</div>)}
+            </div>
         </div>
     );
 }
