@@ -26,7 +26,9 @@ function CommentBox() {
                     type="submit"
                     disabled={comment.length < 1}
                     onClick={(e) => {
-                        { setPosted({ comment }); }
+                        setPosted(posted.push(comment));
+                        console.log(posted);
+                        console.log(comment);
                     }}
                 >Submit</button>
             </div>
