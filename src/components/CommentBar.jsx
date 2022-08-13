@@ -1,9 +1,12 @@
 import React, { useState } from "react"
+import useSocket from "../useSocket";
 
 
-function CommentBox() {
+function CommentBox({ currentUser }) {
 
-    const [posted, setPosted] = useState([]);
+    const [comments, sendComment] = useSocket(
+        currentUser,
+    )
     const [comment, setComment] = useState("");
 
 
@@ -13,7 +16,7 @@ function CommentBox() {
             <div style={{ width: "100%" }}>
                 <input
                     value={comment}
-                    id="com"
+                    id="comment"
                     size="72"
                     type="text"
                     placeholder="Like to leave a comment?"
@@ -22,23 +25,23 @@ function CommentBox() {
 
                 </input>
                 <button
-                    id="comsub"
                     type="submit"
-                    disabled={comment.length < 1}
-                    onClick={(e) => {
-                        setPosted(posted.push(comment));
-                        console.log(posted);
+                    onClick={() => {
+                        if (comment) {
+                            sendComment(comment);
+                            setComment("");
+                        }
                         console.log(comment);
                     }}
                 >Submit</button>
             </div>
-            <div
-                value="setComment"
-                id="compop"
-                style={{ width: "320", height: "100px" }}
-                className="commentbox"
-            >
-                {posted.map((val, idx) => <div key={idx}>{val}</div>)}
+            <div>
+                {comment.map((val, idx) =>
+                    <div key={idx}>
+                        <b>{val.username}:</b>
+                        {val.body}
+                    </div>
+                )}
             </div>
         </div>
     );

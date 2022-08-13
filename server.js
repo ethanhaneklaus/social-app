@@ -1,6 +1,7 @@
 require("dotenv").config();
 const userRoutes = require("./server/routes/users.routes");
 const repliesRoutes = require("./server/routes/replies.routes");
+const commentsRoutes = require("./server/routes/comments.routes")
 const passport = require("./server/config/passport.config");
 const cookieParser = require("cookie-parser");
 

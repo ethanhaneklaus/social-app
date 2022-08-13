@@ -14,6 +14,7 @@ import { UserContext } from "./context/UserContext";
 import ProtectedRoute from "./shared/ProtectedRoute";
 
 function App() {
+  const [currentUser, setCurrentUser] = useState("");
   return (
     <Router>
       <Menu />
@@ -38,6 +39,7 @@ function App() {
           path="/main"
           element={
             <ProtectedRoute requiresLogin={true} component={<MainPage />}
+              setCurrentUser={setCurrentUser}
             />
           }
         />
@@ -46,17 +48,24 @@ function App() {
           path="/profile"
           element={
             <ProtectedRoute requiresLogin={true} component={<ProfilePage />}
+              setCurrentUser={setCurrentUser}
             />
           }
         />
 
-        {/* <Route
-          path="/"
+        <Route
+          path="/components/:comment"
           element={
-            <ProtectedRoute requiresLogin={true} component={< />}
-            />
-          } 
-          /> */}
+            <CommentBar currentUser={currentUser} />
+          }
+        />
+
+        <Route
+          path="/components/:replies"
+          element={
+            <CommentBar currentUser={currentUser} />
+          }
+        />
         <Route path="*" element={<Navigate to="/login" />}
         />
       </Routes>
