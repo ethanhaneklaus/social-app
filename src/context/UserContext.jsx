@@ -57,7 +57,7 @@ export function UserProvider(props) {
       } else {
         console.log(response.data.error);
       }
-    } catch (err) { }
+    } catch (err) { console.log(err) }
   }, []);
 
   return (

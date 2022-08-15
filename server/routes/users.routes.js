@@ -20,6 +20,7 @@ router.get("/logout", (req, res) => {
 
 router.post("/login", async (req, res) => {
     const { username, password } = req.body;
+    console.log(username, password)
     if (!verifyData(username, password)) {
         return res.send({
             success: false,
@@ -32,7 +33,7 @@ router.post("/login", async (req, res) => {
     if (resObj.success) {
         const user = resObj.data;
         //TODO Sign a jwt that expires in 2 days with that user obj
-        const token = jwt.sign(user, process.env.SECERT_KEY, {
+        const token = jwt.sign(user, process.env.SECRET_KEY, {
             expiresIn: "2 days",
         });
         //TODO Add the jwt to an httpOnly cookie called "jwt"
@@ -46,6 +47,7 @@ router.post("/login", async (req, res) => {
 
 router.put("/register", async (req, res) => {
     const { username, password } = req.body;
+    console.log(username, password);
     if (!verifyData(username, password)) {
         return res.send({
             success: false,
@@ -55,7 +57,7 @@ router.put("/register", async (req, res) => {
     }
 
     const resObj = await register(username, password);
-
+    console.log(resObj);
     res.send(resObj);
 });
 

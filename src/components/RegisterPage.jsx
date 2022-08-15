@@ -1,11 +1,14 @@
 import React, { useMemo, useState } from "react";
+import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 
 function RegisterPage() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const { register } = useContext(UserContext);
   const passwordError = useMemo(
     () => password.length < 5 || password.length > 20,
     [password]
@@ -85,6 +88,7 @@ function RegisterPage() {
           onClick={(e) => {
             e.preventDefault();
             if (!confirmError && !passwordError && !usernameError) {
+              register(username, password);
               navigate("/login");
             }
           }}

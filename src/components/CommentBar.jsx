@@ -36,7 +36,7 @@ function CommentBar({ currentUser }) {
                 >Submit</button>
             </div>
             <div>
-                {comment.map((val, idx) =>
+                {comments.map((val, idx) =>
                     <div key={idx}>
                         <b>{val.username}:</b>
                         {val.body}

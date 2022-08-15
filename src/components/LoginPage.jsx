@@ -78,7 +78,7 @@ function LoginPage() {
           onClick={(e) => {
             e.preventDefault();
             if (!passError && !userError) {
-              login(username);
+              login(username, password);
               navigate("/main");
             }
           }}

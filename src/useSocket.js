@@ -1,49 +1,45 @@
 import socketIoClient from "socket.io-client";
 import { useState, useCallback, useEffect, useRef } from "react";
 
-const useSocket = (roomID, username, color) => {
-    const [messages, setMessages] = useState([]);
-    //! Each message is an object that has the following keys:
+const useSocket = (username) => {
+    const [comments, setComment] = useState([]);
+    //! Each comment is an object that has the following keys:
     //! {username: "SOMETHING", body: "MESSAGE TO DISPLAY", color: "HEX COLOR CODE"}
     const socketRef = useRef();
     useEffect(() => {
         socketRef.current = socketIoClient("http://localhost:8080", {
-            query: { username, roomID },
+            query: { username },
         });
 
         socketRef.current.on("user connect", ({ username }) => {
-            let newMsg = {
+            let newComment = {
                 username: "SERVER",
-                body: `${username} has joined the room`,
-                color: "#00FF00",
             };
-            setMessages((curr) => [...curr, newMsg]);
+            setComment((curr) => [...curr, newComment]);
         });
 
         socketRef.current.on("user disconnect", ({ username }) => {
-            let newMsg = {
+            let newComment = {
                 username: "SERVER",
-                body: `${username} has left the room`,
-                color: "#00FF00",
             };
-            setMessages((curr) => [...curr, newMsg]);
+            setComment((curr) => [...curr, newComment]);
         });
 
-        socketRef.current.on("message", (msg) => {
-            setMessages((curr) => [...curr, msg]);
+        socketRef.current.on("comment", (comment) => {
+            setComment((curr) => [...curr, comment]);
         });
 
         return () => socketRef.current.disconnect();
-    }, []);
+    }, [username]);
 
-    const sendMessage = useCallback(
+    const sendComment = useCallback(
         (body) => {
-            socketRef.current.emit("message", { color, username, body });
+            socketRef.current.emit("comment", { username });
         },
-        [color, username]
+        [username]
     );
 
-    return { messages, sendMessage };
+    return { comments, sendComment };
 };
 
 export default useSocket;
