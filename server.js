@@ -26,4 +26,17 @@ app.get("*", (req, res) => {
     return res.sendFile("/build/index.html", { root: __dirname + "/" });
 });
 
+const server = require("http").createServer(app);
+const io = require("socket.io")(server, {
+    cors: {
+        origin: "*",
+    },
+});
+
+io.on("connection", (socket) => {
+    socket.on("comment", (comment) => {
+        io.emit("comment", comment);
+    });
+});
+
 app.listen(PORT, () => console.log("Server is up and running!"));

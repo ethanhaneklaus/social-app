@@ -4,7 +4,7 @@ import useSocket from "../useSocket";
 
 function CommentBar({ currentUser }) {
 
-    const [comments, sendComment] = useSocket(
+    const { comments, sendComment } = useSocket(
         currentUser,
     )
     const [comment, setComment] = useState("");

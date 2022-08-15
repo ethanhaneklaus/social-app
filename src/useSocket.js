@@ -34,12 +34,12 @@ const useSocket = (username) => {
 
     const sendComment = useCallback(
         (body) => {
-            socketRef.current.emit("comment", { username });
+            socketRef.current.emit("comment", { username, body });
         },
         [username]
     );
 
-    return { comments, sendComment };
+    return { comments, setComment, sendComment };
 };
 
 export default useSocket;
