@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import useSocket from "../useSocket";
 
 
-function CommentBox({ currentUser }) {
+function CommentBar({ currentUser }) {
 
     const [comments, sendComment] = useSocket(
         currentUser,
@@ -46,4 +46,4 @@ function CommentBox({ currentUser }) {
         </div>
     );
 }
-export default CommentBox;
+export default CommentBar;

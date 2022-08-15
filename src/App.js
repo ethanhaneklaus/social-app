@@ -12,6 +12,8 @@ import MainPage from "./components/MainPage";
 import ProfilePage from "./components/ProfilePage";
 import { UserContext } from "./context/UserContext";
 import ProtectedRoute from "./shared/ProtectedRoute";
+import { useEffect, useContext, useState } from 'react';
+import CommentBar from "./components/CommentBar"
 
 function App() {
   const [currentUser, setCurrentUser] = useState("");
