@@ -2,13 +2,8 @@ import React, { useState } from "react"
 import useSocket from "../useSocket";
 
 
-function CommentBar({ currentUser }) {
-
-    const { comments, sendComment } = useSocket(
-        currentUser,
-    )
+function CommentBar({ comments, sendComment }) {
     const [comment, setComment] = useState("");
-
 
     return (
 
@@ -35,7 +30,7 @@ function CommentBar({ currentUser }) {
                     }}
                 >Submit</button>
             </div>
-            <div>
+            <div className="commentbox">
                 {comments.map((val, idx) =>
                     <div key={idx}>
                         <b>{val.username}:</b>

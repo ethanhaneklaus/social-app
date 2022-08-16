@@ -1,12 +1,17 @@
-import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
 import { UserContext } from "../context/UserContext";
-import CommentBox from "./CommentBar";
+import useSocket from "../useSocket";
+import CommentBar from "./CommentBar";
 import ProfileCard from "./ProflieCard";
 
 
+
+
 function MainPage() {
-    const navigate = useNavigate();
+    const { loggedInUser } = useContext(UserContext);
+    const { comments, sendComment } = useSocket(
+        loggedInUser.username
+    )
 
     return (
         <div className="wholebg">
@@ -23,6 +28,7 @@ function MainPage() {
                         <div style={{ display: "flex", flexFlow: "row wrap" }}>
                             <>
                                 <iframe
+                                    title="ran1"
                                     height="615"
                                     width="325"
                                     src="https://www.tiktok.com/embed/7119842526156033326"
@@ -35,13 +41,14 @@ function MainPage() {
                                 <ProfileCard />
                             </>
                         </div>
-                        <CommentBox />
+                        <CommentBar comments={comments} sendComment={sendComment} />
                     </div>
 
                     <div style={{ display: "flex", flexFlow: "row wrap" }}>
                         <div style={{ display: "flex", flexFlow: "row wrap" }}>
                             <>
                                 <iframe
+                                    title="ran2"
                                     height="615"
                                     width="325"
                                     src="https://www.tiktok.com/embed/7119518658820394282"
@@ -54,7 +61,7 @@ function MainPage() {
                                 <ProfileCard />
                             </>
                         </div>
-                        <CommentBox />
+                        <CommentBar comments={comments} sendComment={sendComment} />
                     </div>
                 </div>
 
@@ -64,6 +71,7 @@ function MainPage() {
                         <div style={{ display: "flex", flexFlow: "row wrap" }}>
                             <>
                                 <iframe
+                                    title="ran3"
                                     height="615"
                                     width="325"
                                     src="https://www.tiktok.com/embed/7119842526156033326"
@@ -76,13 +84,14 @@ function MainPage() {
                                 <ProfileCard />
                             </>
                         </div>
-                        <CommentBox />
+                        <CommentBar comments={comments} sendComment={sendComment} />
                     </div>
 
                     <div style={{ display: "flex", flexFlow: "row wrap" }}>
                         <div style={{ display: "flex", flexFlow: "row wrap" }}>
                             <>
                                 <iframe
+                                    title="ran4"
                                     height="615"
                                     width="325"
                                     src="https://www.tiktok.com/embed/7119518658820394282"
@@ -95,7 +104,7 @@ function MainPage() {
                                 <ProfileCard />
                             </>
                         </div>
-                        <CommentBox />
+                        <CommentBar comments={comments} sendComment={sendComment} />
                     </div>
                 </div>
 
