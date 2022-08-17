@@ -10,6 +10,11 @@ const express = require("express");
 const app = express();
 
 const PORT = process.env.PORT || 8080
+app.enable("trust proxy");
+app.use((req, res, next) => {
+    req.secure ? next() : res.redirect("https://" + req.headers.host + req.url);
+});
+
 const server = require("http").createServer(app);
 const io = require("socket.io")(server, {
     cors: {
